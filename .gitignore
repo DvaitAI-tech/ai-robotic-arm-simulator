@@ -1,0 +1,15 @@
+# ROS 2 build outputs
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.swp
+
+# IDE
+.vscode/
+.idea/

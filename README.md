@@ -79,14 +79,11 @@ ros2 topic echo /arm_status
 
 ---
 
-## 📸 Demo
-*(Insert your Day 5 video / GIF preview here)*  
 
----
 
 ## 💡 Project Vision
 This is part of a year-long journey to build **AI-driven robotic systems from scratch**,  
-with a long-term target to develop a **₹10 crore AI + Robotics product ecosystem** from India 🇮🇳.  
+with a long-term target to develop a **AI + Robotics product ecosystem** from India 🇮🇳.  
 
 Follow the journey on [LinkedIn](https://www.linkedin.com/in/your-linkedin-handle) for daily progress!  
 

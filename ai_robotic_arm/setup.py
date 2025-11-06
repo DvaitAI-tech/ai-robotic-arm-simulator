@@ -27,6 +27,8 @@ setup(
             'arm_simulator = ai_robotic_arm.arm_simulator:main',
             'ai_controller = ai_robotic_arm.ai_controller:main',
             'arm_command_subscriber = ai_robotic_arm.arm_command_subscriber:main',
+            'arm_status_publisher = ai_robotic_arm.arm_status_publisher:main',
+            'arm_controller = ai_robotic_arm.arm_controller_node:main',
 
         ],
     },

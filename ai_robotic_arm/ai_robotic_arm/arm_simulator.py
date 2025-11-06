@@ -2,7 +2,6 @@ import pygame
 import math
 from ai_robotic_arm.ai_controller import parse_command
 
-
 # --- setup ---
 pygame.init()
 WIDTH, HEIGHT = 800, 600
@@ -49,9 +48,9 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-        if event.type == pygame.KEYDOWN:
-            cmd = input("Enter command: ")
-            handle_ai_command(cmd)
+        # if event.type == pygame.KEYDOWN:
+        #     cmd = input("Enter command: ")
+        #     handle_ai_command(cmd)
 
     keys = pygame.key.get_pressed()
     if keys[pygame.K_a]: angle1 -= angle_speed

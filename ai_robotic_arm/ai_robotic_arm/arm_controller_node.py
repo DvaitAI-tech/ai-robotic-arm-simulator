@@ -11,6 +11,9 @@ import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
 from ai_robotic_arm.ai_controller import parse_command
+import csv
+import time
+
 class ArmController(Node):
     """ROS 2 + Pygame arm controller."""
 
@@ -26,12 +29,16 @@ class ArmController(Node):
         self.screen = pygame.display.set_mode((800, 600))
         pygame.display.set_caption("ROS 2 Controlled AI Robotic Arm")
         self.clock = pygame.time.Clock()
-
+        self.angle_speed      = 2
         # Arm geometry
         self.base_x, self.base_y = 400, 400
         self.l1, self.l2 = 150.0, 100.0
         self.angle1, self.angle2 = 45.0, 45.0
         self.running = True
+        self.log_file = open('arm_log.csv', 'w', newline='')
+        self.csv_writer = csv.writer(self.log_file)
+        self.csv_writer.writerow(["timestamp", "command", "angle1", "angle2"])
+
 
         self.get_logger().info("✅ ArmController node started — awaiting /arm_command messages.")
 
@@ -42,6 +49,8 @@ class ArmController(Node):
         """Process incoming /arm_command messages."""
         cmd = msg.data.strip().lower()
         parsed = parse_command(cmd)
+        self.csv_writer.writerow([time.time(), cmd, self.angle1, self.angle2])
+        self.log_file.flush()
 
         if not parsed:
             status = f"Unknown command: {cmd}"
@@ -90,6 +99,18 @@ class ArmController(Node):
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.running = False
+            # 5️⃣ Manual Control (Optional)
+            keys = pygame.key.get_pressed()
+            if keys[pygame.K_a]: self.angle1 -= self.angle_speed
+            if keys[pygame.K_d]: self.angle1 += self.angle_speed
+            if keys[pygame.K_w]: self.angle2 -= self.angle_speed
+            if keys[pygame.K_s]: self.angle2 += self.angle_speed
+
+            # 6️⃣ Simple Auto Demo Mode (Press SPACE to toggle)
+            if keys[pygame.K_SPACE]:
+                self.angle1 += 1.5 * math.sin(pygame.time.get_ticks() * 0.002)
+                self.angle2 += 1.5 * math.cos(pygame.time.get_ticks() * 0.002)
+
 
             # Handle ROS callbacks without blocking
             rclpy.spin_once(self, timeout_sec=0)

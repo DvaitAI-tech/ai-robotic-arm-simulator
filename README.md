@@ -4,6 +4,8 @@ A **2-link robotic-arm simulator** built with **Python**, **Pygame**, and **ROS 
 It can receive movement commands through ROS 2 topics and publish live arm-status updates — the foundation for an AI-controlled robotic system.  
 
 ---
+![Demo](ai_robotic_arm/res/demo.gif)
+
 
 ## ✨ Current Features (Day 5)
 - ✅ Real-time ROS 2 control using `/arm_command` topic  

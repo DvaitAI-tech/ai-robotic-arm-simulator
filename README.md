@@ -1,39 +1,47 @@
-# 🤖 AI Robotic Arm – ROS 2 Humble
+# 🤖 DvaitAI – AI Robotic Arm (ROS 2 Humble)
 
-A **2-link robotic-arm simulator** built with **Python**, **Pygame**, and **ROS 2 (Humble)**.  
-It can receive movement commands through ROS 2 topics and publish live arm-status updates — the foundation for an AI-controlled robotic system.  
-
----
-![Demo](ai_robotic_arm/res/demo.gif)
-
-
-## ✨ Current Features (Day 5)
-- ✅ Real-time ROS 2 control using `/arm_command` topic  
-- ✅ Live simulator visualization built with Pygame  
-- ✅ Publishes feedback on `/arm_status`  
-- ✅ Basic AI command parser for natural-language-like inputs  
-- ✅ Smooth 2-joint motion with clean shutdown handling  
+A **2-link robotic arm simulator** powered by **Python**, **ROS 2 (Humble)**, and **Pygame** — evolving into a self-learning AI robotic system under the **DvaitAI** initiative.
 
 ---
 
-## 🧠 Upcoming Goals (Day 6 →)
-- 🤖 Integrate an **AI Agent** that automatically generates movement commands  
-- 🧩 Add a **control dashboard / web UI** for visualization  
-- 📡 Publish detailed telemetry (angles, velocities, actions)  
-- 💡 Launch open-source release and start early monetization experiments  
+## 🧭 Journey Summary (Day 1 → Day 6)
+
+| Day | Focus | Description | Link |
+|-----|--------|--------------|------|
+| **Day 1** | Vision & Foundation | Defined the goal, created GitHub + LinkedIn, and set DvaitAI’s direction. | [View](docs/day1.md) |
+| **Day 2** | ROS 2 Setup | Installed ROS 2 Humble, configured workspace, and tested pub/sub. | [View](docs/day2.md) |
+| **Day 3** | ROS 2 Package Creation | Created `ai_robotic_arm` package and simulator base structure. | [View](docs/day3.md) |
+| **Day 4** | Real-Time Control | Integrated `/arm_command` & `/arm_status` topics with visualization. | [View](docs/day4.md) |
+| **Day 5** | Brand Identity & Integration | Created YouTube, GitHub updates, and launched DvaitAI identity. | [View](docs/day5.md) |
+| **Day 6** | AI Autopilot | Added `ai_autopilot.py` — the first intelligent control layer. | [View](docs/day6.md) |
+
+---
+
+## ✨ Current Features
+- ✅ Real-time ROS 2 control via `/arm_command`  
+- ✅ Live Pygame visualization  
+- ✅ Publishes live arm status updates  
+- ✅ Natural-language-style command parser  
+- ✅ AI Autopilot for autonomous motion  
+
+---
+
+## 🧠 Upcoming Goals
+- 🧩 Reinforcement learning for predictive control  
+- 📊 Web dashboard for monitoring & command input  
+- 🤖 Real hardware integration (simulation → physical)  
 
 ---
 
 ## 🧩 System Architecture
 ```
-ROS2 Workspace (ros2_ws)
-└── ai_robotic_arm
+    ROS2 Workspace (ros2_ws)
+    └── ai_robotic_arm
     ├── ai_robotic_arm/
-    │   ├── ai_controller.py          # Text command parser
-    │   ├── arm_simulator.py          # Base visualization
-    │   ├── arm_command_subscriber.py # Command listener (earlier version)
-    │   ├── arm_status_publisher.py   # Status publisher
-    │   └── arm_controller_node.py    # Real-time control + visualization
+    │ ├── ai_controller.py
+    │ ├── arm_simulator.py
+    │ ├── arm_controller_node.py
+    │ ├── ai_autopilot.py
     ├── package.xml
     ├── setup.py
     └── README.md
@@ -41,81 +49,31 @@ ROS2 Workspace (ros2_ws)
 
 ---
 
-## ⚙️ Installation & Build
-
-```bash
-# 1️⃣ Clone the repository
-cd ~/ros2_ws/src
-git clone git@github.com-work:kukrumku/ai-robotic-arm-simulator.git
-
-# 2️⃣ Build the workspace
-cd ~/ros2_ws
-colcon build --symlink-install
-
-# 3️⃣ Source the setup file
-source install/setup.bash
-```
-
----
-
-## ▶️ Run the Simulation
-
-### Start the controller node
-```bash
-ros2 run ai_robotic_arm arm_controller
-```
-
-### Send movement commands
-```bash
-ros2 topic pub /arm_command std_msgs/String "data: 'move left'"
-ros2 topic pub /arm_command std_msgs/String "data: 'move up'"
-ros2 topic pub /arm_command std_msgs/String "data: 'pick'"
-```
-
-### Observe arm status
-```bash
-ros2 topic echo /arm_status
-```
-
-✅ Watch the robotic arm respond to your commands live in the Pygame window!  
-
----
-
-
-
 ## 💡 Project Vision
-This is part of a year-long journey to build **AI-driven robotic systems from scratch**,  
-with a long-term target to develop a **AI + Robotics product ecosystem** from India 🇮🇳.  
-
-Follow the journey on [LinkedIn](https://www.linkedin.com/in/your-linkedin-handle) for daily progress!  
-
----
-
-## 🧰 Tech Stack
-| Component | Description |
-|------------|-------------|
-| **Language** | Python 3.10 + |
-| **Framework** | ROS 2 Humble (rclpy) |
-| **Visualization** | Pygame |
-| **Messaging** | `std_msgs/String` topics |
-| **AI Integration (soon)** | Local LLM / API Agents |
-| **Build** | `colcon build --symlink-install` |
+**DvaitAI** explores the *duality of intelligence* —  
+where creation and control coexist.  
+Each algorithm can build or destroy — the outcome depends on how we use it.
 
 ---
 
-## 🤝 Contributing
-1. Fork the repo  
-2. Create a new feature branch  
-3. Commit changes and open a PR  
-4. Suggestions and improvements are welcome!  
+## 🌐 Official Links
+- 🔗 **GitHub:** [DvaitAI-tech](https://github.com/DvaitAI-tech)  
+- 🎥 **YouTube:** [@DvaitAITech](https://www.youtube.com/@DvaitAITech)  
+- 💼 **LinkedIn:** [Nripender Kumar](https://www.linkedin.com/in/nripender-kumar-200ab81a1/)  
+- 📩 **Email:** nk.dvaitai@gmail.com  
+
+---
+
+## 💪 Motivation
+> “Innovation is not born in perfection — it’s forged through curiosity, control, and chaos.”  
 
 ---
 
 ## 📜 License
-MIT License — Feel free to use, modify, and build on this project.  
+MIT License — Free to use, modify & share.  
 
 ---
 
 ## 🌟 Support the Journey
-If you find this project interesting, please **⭐ Star** the repository and share it!  
-Your support helps this AI + Robotics initiative grow.
+If you like this project, **⭐ Star** the repo, share it, and follow DvaitAI on YouTube for more AI + Robotics progress.  
+> *DvaitAI — Where Intelligence Meets Duality.*

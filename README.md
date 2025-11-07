@@ -13,7 +13,8 @@ A **2-link robotic arm simulator** powered by **Python**, **ROS 2 (Humble)**, an
 | **Day 3** | ROS 2 Package Creation | Created `ai_robotic_arm` package and simulator base structure. | [View](docs/day3.md) |
 | **Day 4** | Real-Time Control | Integrated `/arm_command` & `/arm_status` topics with visualization. | [View](docs/day4.md) |
 | **Day 5** | Brand Identity & Integration | Created YouTube, GitHub updates, and launched DvaitAI identity. | [View](docs/day5.md) |
-| **Day 6** | AI Autopilot | Added `ai_autopilot.py` — the first intelligent control layer. | [View](docs/day6.md) |
+| **Day 6** | AI Autopilot + Dashboard | Integrated AI Autopilot and built Tkinter-based real-time control dashboard with ROS 2. | [View](./Day6.md) |
+
 
 ---
 
@@ -23,13 +24,21 @@ A **2-link robotic arm simulator** powered by **Python**, **ROS 2 (Humble)**, an
 - ✅ Publishes live arm status updates  
 - ✅ Natural-language-style command parser  
 - ✅ AI Autopilot for autonomous motion  
+- ✅ Tkinter-based real-time dashboard for manual control  
+- ✅ Live status visualization from ROS 2 topics (`/arm_status`)
+
 
 ---
 
 ## 🧠 Upcoming Goals
-- 🧩 Reinforcement learning for predictive control  
-- 📊 Web dashboard for monitoring & command input  
-- 🤖 Real hardware integration (simulation → physical)  
+- 🧩 Add **AI Mode Toggle** inside dashboard  
+- 🧩 Implement **pattern-learning system** for adaptive motion  
+- 📊 Visualize telemetry data (angles, actions, and time series)  
+
+## 🎥 Demo
+Watch the live dashboard in action:  
+📹 [DvaitAI | Day 6 – Real-Time Robotic Arm Dashboard (Tkinter + ROS 2)](https://youtu.be/2UlGpsEMKyg)
+
 
 ---
 

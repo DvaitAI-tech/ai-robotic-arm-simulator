@@ -30,6 +30,7 @@ setup(
             'arm_status_publisher = ai_robotic_arm.arm_status_publisher:main',
             'arm_controller = ai_robotic_arm.arm_controller_node:main',
             'ai_autopilot = ai_robotic_arm.ai_autopilot:main',
+            'robot_dashboard = ai_robotic_arm.robot_dashboard:main'
 
         ],
     },

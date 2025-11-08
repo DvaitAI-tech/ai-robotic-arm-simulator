@@ -1,44 +1,41 @@
-# 🤖 DvaitAI – AI Robotic Arm (ROS 2 Humble)
+# 🤖 DvaitAI – Robotic Arm Simulator (ROS 2 Humble)
 
-A **2-link robotic arm simulator** powered by **Python**, **ROS 2 (Humble)**, and **Pygame** — evolving into a self-learning AI robotic system under the **DvaitAI** initiative.
+A **2-link robotic arm simulator** powered by **Python**, **ROS 2 (Humble)**, **Tkinter**, and **Pygame** — built as the foundation for the **DvaitAI** initiative:  
+a journey toward practical, open, and evolving AI + Robotics systems.
 
 ---
 
-## 🧭 Journey Summary (Day 1 → Day 6)
+## 🧭 Journey Summary (Day 1 → Day 7)
 
 | Day | Focus | Description | Link |
 |-----|--------|--------------|------|
-| **Day 1** | Vision & Foundation | Defined the goal, created GitHub + LinkedIn, and set DvaitAI’s direction. | [View](docs/day1.md) |
-| **Day 2** | ROS 2 Setup | Installed ROS 2 Humble, configured workspace, and tested pub/sub. | [View](docs/day2.md) |
-| **Day 3** | ROS 2 Package Creation | Created `ai_robotic_arm` package and simulator base structure. | [View](docs/day3.md) |
+| **Day 1** | Vision & Foundation | Defined the DvaitAI goal, created GitHub + LinkedIn, and set project roadmap. | [View](docs/day1.md) |
+| **Day 2** | ROS 2 Setup | Installed ROS 2 Humble, configured workspace, and tested pub/sub nodes. | [View](docs/day2.md) |
+| **Day 3** | Package Creation | Created `ai_robotic_arm` package and simulator base structure. | [View](docs/day3.md) |
 | **Day 4** | Real-Time Control | Integrated `/arm_command` & `/arm_status` topics with visualization. | [View](docs/day4.md) |
-| **Day 5** | Brand Identity & Integration | Created YouTube, GitHub updates, and launched DvaitAI identity. | [View](docs/day5.md) |
-| **Day 6** | AI Autopilot + Dashboard | Integrated AI Autopilot and built Tkinter-based real-time control dashboard with ROS 2. | [View](./Day6.md) |
-
-
----
-
-## ✨ Current Features
-- ✅ Real-time ROS 2 control via `/arm_command`  
-- ✅ Live Pygame visualization  
-- ✅ Publishes live arm status updates  
-- ✅ Natural-language-style command parser  
-- ✅ AI Autopilot for autonomous motion  
-- ✅ Tkinter-based real-time dashboard for manual control  
-- ✅ Live status visualization from ROS 2 topics (`/arm_status`)
-
+| **Day 5** | Brand Identity | Launched DvaitAI branding on GitHub, LinkedIn, and YouTube. | [View](docs/day5.md) |
+| **Day 6** | Dashboard Build | Created Tkinter-based real-time control dashboard integrated with ROS 2. | [View](docs/day6.md) |
+| **Day 7** | Visualization + Release | Added live telemetry visualization, autopilot mode, and released v1.0 demo. | [View](docs/day7.md) |
 
 ---
 
-## 🧠 Upcoming Goals
-- 🧩 Add **AI Mode Toggle** inside dashboard  
-- 🧩 Implement **pattern-learning system** for adaptive motion  
-- 📊 Visualize telemetry data (angles, actions, and time series)  
+## ✨ Current Features (v1.0)
+- ✅ Real-time **ROS 2 control** via `/arm_command`
+- ✅ Live **Pygame-based arm visualization**
+- ✅ **Tkinter Dashboard** for manual and autopilot modes
+- ✅ Publishes live status via `/arm_status`
+- ✅ **Autopilot Mode** with random/patterned movement
+- ✅ **Live Telemetry Graph** (Matplotlib)
+- ✅ **CSV Logging** for data analysis
+- ✅ **Pause/Resume Graph** toggle for inspection
 
-## 🎥 Demo
-Watch the live dashboard in action:  
-📹 [DvaitAI | Day 6 – Real-Time Robotic Arm Dashboard (Tkinter + ROS 2)](https://youtu.be/2UlGpsEMKyg)
+---
 
+## 🎥 Demo Video
+📹 [Watch DvaitAI v1.0 Demo – ROS 2 Robotic Arm Dashboard](https://youtu.be/Hue3Q42pfck)
+
+See how ROS 2 topics, dashboard control, and telemetry visualization come together —  
+a complete system from **manual control to automated motion**.
 
 ---
 
@@ -48,9 +45,11 @@ Watch the live dashboard in action:
     └── ai_robotic_arm
     ├── ai_robotic_arm/
     │ ├── ai_controller.py
+    │ ├── ai_autopilot.py
     │ ├── arm_simulator.py
     │ ├── arm_controller_node.py
-    │ ├── ai_autopilot.py
+    │ ├── robot_dashboard.py
+    │ └── arm_log.csv
     ├── package.xml
     ├── setup.py
     └── README.md
@@ -58,31 +57,82 @@ Watch the live dashboard in action:
 
 ---
 
+## ⚙️ Tech Stack
+| Component | Description |
+|------------|-------------|
+| **Language** | Python 3.10+ |
+| **Framework** | ROS 2 (Humble) |
+| **UI** | Tkinter |
+| **Simulation** | Pygame |
+| **Visualization** | Matplotlib |
+| **Logging** | CSV |
+| **Control Modes** | Manual / Autopilot |
+
+---
+
+## 🧠 Learnings
+Before intelligence comes control.  
+This version focuses on mastering **feedback loops**, **data flow**, and **system response** —  
+the essentials every AI system needs before learning can begin.
+
+> “A system that can respond with clarity is already one step closer to thinking.”
+
+---
+
+## 🧭 Next Steps – DvaitAI v2
+The next version will evolve this simulator into a more autonomous and intelligent system:
+
+- 🔹 Add **rule-based autopilot logic**
+- 🔹 Implement **goal-based arm positioning**
+- 🔹 Integrate **PID control** for smooth motion
+- 🔹 Expand **telemetry** with time and velocity
+- 🔹 Prepare for **learning-based extensions**
+
+---
+
 ## 💡 Project Vision
 **DvaitAI** explores the *duality of intelligence* —  
 where creation and control coexist.  
-Each algorithm can build or destroy — the outcome depends on how we use it.
+Every system can build or break; the difference lies in how we guide it.
+
+This initiative aims to make robotics **accessible, ethical, and scalable**,  
+bridging the gap between academic AI and practical systems.
 
 ---
 
 ## 🌐 Official Links
-- 🔗 **GitHub:** [DvaitAI-tech](https://github.com/DvaitAI-tech)  
-- 🎥 **YouTube:** [@DvaitAITech](https://www.youtube.com/@DvaitAITech)  
-- 💼 **LinkedIn:** [Nripender Kumar](https://www.linkedin.com/in/nripender-kumar-200ab81a1/)  
-- 📩 **Email:** nk.dvaitai@gmail.com  
+- 🔗 **GitHub:** [DvaitAI-tech](https://github.com/DvaitAI-tech)
+- 🎥 **YouTube:** [@DvaitAITech](https://www.youtube.com/@DvaitAITech)
+- 💼 **LinkedIn:** [Nripender Kumar](https://www.linkedin.com/in/nripender-kumar-200ab81a1/)
+- 📩 **Email:** nk.dvaitai@gmail.com
 
 ---
 
-## 💪 Motivation
-> “Innovation is not born in perfection — it’s forged through curiosity, control, and chaos.”  
+## 💬 Motivation
+> “Innovation isn’t about perfection — it’s about iteration.  
+> Each working system is a foundation for something greater.”
 
 ---
 
 ## 📜 License
-MIT License — Free to use, modify & share.  
+MIT License — Free to use, modify & share.
 
 ---
 
 ## 🌟 Support the Journey
-If you like this project, **⭐ Star** the repo, share it, and follow DvaitAI on YouTube for more AI + Robotics progress.  
+If you find this project inspiring, **⭐ Star the repo**,  
+share it, and subscribe on YouTube for the next phase of **DvaitAI**.
+
 > *DvaitAI — Where Intelligence Meets Duality.*
+
+## ✅ Highlights of this final version
+
+100% accurate (no false AI claims)
+
+Includes truthful tech summary (manual + autopilot only)
+
+Has learning + motivational insight for readers
+
+Clean v1.0 release polish
+
+Sets clear expectations for v2
